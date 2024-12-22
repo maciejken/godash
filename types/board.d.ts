@@ -13,13 +13,14 @@ export declare const EMPTY: Color;
 
 export declare class Board extends Record({dimensions: 19, moves: Map<Coordinate, Color>()}, 'Board') {
     constructor(dimensions: number, ...moves: Move[]);
+    toMap(): Color[][];
 }
 
 export declare class Coordinate extends Record({x: 0, y: 0}, 'Coordinate') {
     constructor(x: number, y: number);
 }
 
-export declare class Move extends Record({coordinate: Coordinate(), color: EMPTY}, 'Move') {
+export declare class Move extends Record({coordinate: Coordinate, color: EMPTY}, 'Move') {
     constructor(coordinate: Coordinate, color: Color);
 }
 
